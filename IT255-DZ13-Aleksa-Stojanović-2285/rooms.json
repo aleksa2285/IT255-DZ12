@@ -1,0 +1,32 @@
+[
+  {
+    "id": "56f582067ccdec13dd855ce6",
+    "naziv": "Apartman",
+    "brojkreveta": "2",
+    "brojkvadrata": "53"
+  },
+  {
+   "id": "56f582067ccdec13dd855ce6",
+    "naziv": "Apartman",
+    "brojkreveta": "5",
+    "brojkvadrata": "120"
+	},
+  {
+    "id": "56f58206688d48558b785851",
+    "naziv": "Apartman",
+    "brojkreveta": "1",
+    "brojkvadrata": "23"
+  },
+  {
+    "id": "56f5820699db3339189cf1f3",
+    "naziv": "Apartman",
+    "brojkreveta": "6",
+    "brojkvadrata": "150"
+  },
+  {
+    "id": "56f58206048e0928aec1cc54",
+    "naziv": "Apartman",
+    "brojkreveta": "3",
+    "brojkvadrata": "63"
+  }
+]
