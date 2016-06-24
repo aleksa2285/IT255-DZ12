@@ -1,0 +1,18 @@
+<h2>Sign up form</h2>
+			<form>
+				<div>
+				<label for="mail">Mail</label>
+				<input ngControl="mail" type="text" id="mail" required #email="ngForm">
+				<span class="validation-error" *ngIf="!email.valid">Not valid</span>
+				</div>
+				<div>
+				<label for="password">Password</label>
+				<input ngControl="password" type="text" id="password" required #password="ngForm">
+				<span class="validation-error" *ngIf="!password.valid">Not valid</span>
+				</div>
+				<button (click) = "onPost(email.value, password.value)"> Login </button>
+			</form>
+		
+
+
+		<div id='bad'></div>
