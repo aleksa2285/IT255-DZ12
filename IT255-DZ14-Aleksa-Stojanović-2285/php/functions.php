@@ -4,7 +4,7 @@ function checkIfLoggedIn(){
 	global $conn;
 	if(isset($_SERVER['HTTP_TOKEN'])){
 		$token = $_SERVER['HTTP_TOKEN'];
-		$result = $conn->prepare("SELECT * FROM korisnici WHERE token=?");
+		$result = $conn->prepare("SELECT * FROM user WHERE token=?");
 		$result->bind_param("s",$token);
 		$result->execute();
 		$result->store_result();
@@ -45,14 +45,13 @@ function checkLogin($username, $password){
 	$num_rows = $result->num_rows;
 	if($num_rows > 0)
 	{
-		return "true";
+		return 1;
 		
 	}
 	else{
-		return "false";
-	// 	$rarray['error'] = "invalid";
-	 }
-		// return json_encode($rarray);
+		return 0;
+		 }
+	
 
 	
 }
@@ -76,12 +75,12 @@ function register($username, $password, $firstname, $lastname){
 		$errors .= "Last name must have at least 3 characters\r\n";
 	}
 	if($errors == ""){
-		$stmt = $conn->prepare("INSERT INTO korisnici (firstname, lastname, username, password) VALUES (?, ?, ?, ?)");
+		$stmt = $conn->prepare("INSERT INTO user (firstname, lastname, username, password) VALUES (?, ?, ?, ?)");
 		$pass =md5($password);
 		$stmt->bind_param("ssss", $firstname, $lastname, $username, $pass);
 		if($stmt->execute()){
 			$id = sha1(uniqid());
-			$result2 = $conn->prepare("UPDATE korisnici SET token=? WHERE username=?");
+			$result2 = $conn->prepare("UPDATE user SET token=? WHERE username=?");
 			$result2->bind_param("ss",$id,$username);
 			$result2->execute();
 			$rarray['token'] = $id;
@@ -167,4 +166,30 @@ function getAllRooms(){
 		return json_encode($rarray);
 	 
 }
+function deleteRoom($id){
+	global $conn;
+	$rarray = array();
+	
+		$result = $conn->prepare("DELETE FROM rooms WHERE id=?");
+		$result->bind_param("i",$id);
+		$result->execute();
+		$rarray['success'] = "Deleted successfully";
+	
+	return json_encode($rarray);
+}
+function updateRoom($roomName, $hasTV, $beds, $id){
+	global $conn;
+	$rarray = array();
+	
+		$stmt = $conn->prepare("UPDATE rooms SET roomname=?, tv=?, beds=? WHERE id=?");
+		$stmt->bind_param("sssi", $roomName, $hasTV, $beds,$id);
+		if($stmt->execute()){
+			$rarray['success'] = "updated";
+		}else{
+			$rarray['error'] = "Database connection error";
+		}
+	
+	return json_encode($rarray);
+}
+
 ?>
