@@ -50,7 +50,7 @@ export class AllRoomsComponent{
         this.http.get('http://localhost/deleteroomservice.php?id='+roomID, {headers:headers})
             .map(res => res.json())
             .subscribe( data => this.serviceResponse = data);
-            table.ajax.url('getrooms.php').load();
+            location.reload();
 
 }
     public changeInfo(item : Object){
