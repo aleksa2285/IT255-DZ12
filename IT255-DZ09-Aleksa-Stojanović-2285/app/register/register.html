@@ -1,0 +1,25 @@
+<h2>Sign up form</h2>
+			<form>
+				<div>
+				<label for="mail">Name</label>
+				<input ngControl="mail" type="text" id="mail" required #firstname="ngForm">
+				<span class="validation-error" *ngIf="!firstname.valid">Not valid</span>
+				</div>
+				<div>
+				<label for="password">Surname</label>
+				<input ngControl="password" type="text" id="password" required #lastname="ngForm">
+				<span class="validation-error" *ngIf="!lastname.valid">Not valid</span>
+				</div>
+				<div>
+				<label for="mail">Username</label>
+				<input ngControl="mail" type="text" id="mail" required #username="ngForm">
+				<span class="validation-error" *ngIf="!username.valid">Not valid</span>
+				</div>
+				<div>
+				<label for="mail">Password</label>
+				<input ngControl="mail" type="text" id="mail" required #password="ngForm">
+				<span class="validation-error" *ngIf="!password.valid">Not valid</span>
+				</div>
+				
+				<button (click) = "onPost(firstname.value, lastname.value, username.value, password.value)"> Register </button>
+			</form>

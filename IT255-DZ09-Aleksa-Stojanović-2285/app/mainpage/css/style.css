@@ -1,0 +1,69 @@
+.image-bg-fluid-height {
+ height: 450px;
+
+}
+.section-heading{
+
+text-align: center;
+
+}
+.lead{
+
+text-align:center;
+}
+.section-paragraph{
+text-align:center;
+
+}
+#naslov{
+border-bottom: thick dotted #992600;
+}
+.col-sm-6{
+
+	text-align: center;
+
+}
+.img-responsive{
+border-radius:50px;
+}
+.thumbnail{
+border:0px;
+}
+#stagod{
+padding: 15px 0px;
+}
+a.thumbnail{
+
+	border:0px;
+}
+div.col-lg-12{
+
+	font-size:15px;
+
+}
+div.col-sm-6{
+
+	font-size: 15px;
+	margin-bottom: 55px;
+	margin-top:20px;
+}
+h1#naslov.section-heading{
+
+	margin-top: 50px;
+}
+#druga{
+	background: url("app/mainpage/images/mapa.png") no-repeat center center scroll;
+    height: 450px;
+	opacity: 0.7;
+	width:100%;
+	margin-bottom:80px;
+
+}
+#paddingQ{
+
+	margin-bottom:50px;
+}
+.nav.navbar.navbar-default {
+
+	margin-bottom: 0px;
+}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+</head>
+<body>
+<table id = "myTable" class="display" cellspacing="0.8"  style="margin-top:100px;">
+	    <thead>
+            <tr>
+                <th>Tip sobe: </th>
+                <th>Broj kreveta: </th>
+                <th>Broj kvadrata: </th>
+                <th>Broj televizora: </th>
+                <th>Izmena soba: </th>
+                <th>Brisanje soba:  </th>
+            </tr>
+        </thead>
+       
+         <tbody>
+            <tr *ngFor="#room of rooms"
+>          <td>{{room.roomname}}</td>
+                <td>{{room.beds}}</td>
+                <td>{{room.brojkvadrata}}</td>
+                <td>{{room.tv}}</td>
+                <td><button class ="btn btn-info" (click) = "changeInfo(room)"><span class = "glyphicon glyphicon-pushpin"></span></button></td>
+                <td><button class="btn btn-danger" title="remove" (click)="deleteRoom(room.id)">x</button></td>
+             </tr>
+        </tbody>
+    </table>
+</body>
+</html>

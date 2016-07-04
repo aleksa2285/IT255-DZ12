@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>IT255-DZ06-Aleksa-Stojanović-2285</title>
+</head>
+
+<body>
+	    <div style="text-align: center; margin-top:20px;margin-bottom:20px;background-color:yellow;" id="first">
+
+<p id="1" style="background:yellow;"></p>
+	    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+<script>
+$().ready(function(){
+
+var root = 'http://jsonplaceholder.typicode.com';
+
+$.ajax({
+  url: root + '/posts/1',
+  method: 'GET'
+}).then(function(data) {
+
+	var response = data;
+  $('#1').append('Title: ' + response.title);
+});
+});
+</script>
+</body>
+
+</html>
